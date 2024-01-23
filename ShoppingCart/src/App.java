@@ -1,4 +1,5 @@
 // Using decorator design pattern
+// Different products can have different coupons, design a shopping cart that computes final net payable for list of product in cart
 public class App {
   public static void main(String[] args) {
     System.out.println("Welcome to Jio");

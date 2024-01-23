@@ -1,7 +1,6 @@
 /*
  * Usecase :
- * When we want N number of functionality in our different classes in same order
- * But their internal implementation of each functionality may differ
+ * When we want N number of functionality in our different classes in same order, but their internal implementation of each functionality may differ
 */
 
 public class Template {
