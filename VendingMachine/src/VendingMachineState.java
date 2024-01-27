@@ -18,4 +18,6 @@ public interface VendingMachineState {
 
   public void updateInventory(VendingMachine machine, Item item, int codeNumber) throws Exception;
 
+  public String getState() throws Exception;
+
 }

@@ -2,28 +2,31 @@ import java.util.List;
 
 public class HasMoneyState implements VendingMachineState {
 
+  String state;
+
   public HasMoneyState() {
     System.out.println("Currently Vending machine is in HasMoneyState");
+    state = new String("HasMoneyState");
   }
 
   @Override
-  public void clickOnInsertCoinButton(VendingMachine machine) throws Exception {
+  public void clickOnInsertCoinButton(VendingMachine vendingMachine) throws Exception {
     return;
   }
 
   @Override
-  public void clickOnStartProductSelectionButton(VendingMachine machine) throws Exception {
-    machine.setVendingMachineState(new SelectionState());
+  public void clickOnStartProductSelectionButton(VendingMachine vendingMachine) throws Exception {
+    vendingMachine.setVendingMachineState(new SelectionState());
   }
 
   @Override
-  public void insertCoin(VendingMachine machine, Coin coin) throws Exception {
+  public void insertCoin(VendingMachine vendingMachine, Coin coin) throws Exception {
     System.out.println("Accepted the coin");
-    machine.getCoinList().add(coin);
+    vendingMachine.getCoinList().add(coin);
   }
 
   @Override
-  public void chooseProduct(VendingMachine machine, int codeNumber) throws Exception {
+  public void chooseProduct(VendingMachine vendingMachine, int codeNumber) throws Exception {
     throw new Exception("you need to click on start product selection button first");
   }
 
@@ -33,19 +36,24 @@ public class HasMoneyState implements VendingMachineState {
   }
 
   @Override
-  public Item dispenseProduct(VendingMachine machine, int codeNumber) throws Exception {
+  public Item dispenseProduct(VendingMachine vendingMachine, int codeNumber) throws Exception {
     throw new Exception("product can not be dispensed in hasMoney state");
   }
 
   @Override
-  public List<Coin> refundFullMoney(VendingMachine machine) throws Exception {
+  public List<Coin> refundFullMoney(VendingMachine vendingMachine) throws Exception {
     System.out.println("Returned the full amount back in the Coin Dispense Tray");
-    machine.setVendingMachineState(new IdleState(machine));
-    return machine.getCoinList();
+    vendingMachine.setVendingMachineState(new IdleState(vendingMachine));
+    return vendingMachine.getCoinList();
   }
 
   @Override
-  public void updateInventory(VendingMachine machine, Item item, int codeNumber) throws Exception {
+  public void updateInventory(VendingMachine vendingMachine, Item item, int codeNumber) throws Exception {
     throw new Exception("you can not update inventory in hasMoney  state");
+  }
+
+  @Override
+  public String getState() throws Exception {
+    return state;
   }
 }

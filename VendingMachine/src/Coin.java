@@ -1,9 +1,9 @@
 public enum Coin {
 
-  PENNY(1),
-  NICKEL(5),
-  DIME(10),
-  QUARTER(25);
+  ONERUPEE(1),
+  FIVERUPEE(5),
+  TENRUPEE(10),
+  TWENTYRUPEE(25);
 
   public int value;
 

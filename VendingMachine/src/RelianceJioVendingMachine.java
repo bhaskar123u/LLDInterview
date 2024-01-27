@@ -15,21 +15,26 @@ public class RelianceJioVendingMachine {
       System.out.println("clicking on InsertCoinButton");
       System.out.println("|");
 
-      VendingMachineState vendingState = vendingMachine.getVendingMachineState();
-      vendingState.clickOnInsertCoinButton(vendingMachine);
+      VendingMachineState vendingMachineState = vendingMachine.getVendingMachineState();
+      
+      vendingMachineState.clickOnInsertCoinButton(vendingMachine);
 
-      vendingState = vendingMachine.getVendingMachineState();
-      vendingState.insertCoin(vendingMachine, Coin.NICKEL);
-      vendingState.insertCoin(vendingMachine, Coin.QUARTER);
+      vendingMachineState = vendingMachine.getVendingMachineState();
+      
+
+      vendingMachineState.clickOnInsertCoinButton(vendingMachine);
+      vendingMachineState.insertCoin(vendingMachine, Coin.FIVERUPEE);
+      vendingMachineState.insertCoin(vendingMachine, Coin.TWENTYRUPEE);
       // vendingState.insertCoin(vendingMachine, Coin.NICKEL);
 
       System.out.println("|");
       System.out.println("clicking on ProductSelectionButton");
       System.out.println("|");
-      vendingState.clickOnStartProductSelectionButton(vendingMachine);
+      vendingMachineState.clickOnStartProductSelectionButton(vendingMachine);
 
-      vendingState = vendingMachine.getVendingMachineState();
-      vendingState.chooseProduct(vendingMachine, 102);
+      vendingMachineState = vendingMachine.getVendingMachineState();
+      
+      vendingMachineState.chooseProduct(vendingMachine, 102);
 
       displayInventory(vendingMachine);
 
@@ -40,8 +45,8 @@ public class RelianceJioVendingMachine {
   }
 
   private static void fillUpInventory(VendingMachine vendingMachine) {
-    ItemShelf[] slots = vendingMachine.getInventory().getInventory();
-    for (int i = 0; i < slots.length; i++) {
+    ItemShelf itemShelf[] = vendingMachine.getInventory().getItemShelf();
+    for (int i = 0; i < itemShelf.length; i++) {
       Item newItem = new Item();
       if (i >= 0 && i < 3) {
         newItem.setItemType(ItemType.COKE);
@@ -56,20 +61,20 @@ public class RelianceJioVendingMachine {
         newItem.setItemType(ItemType.SODA);
         newItem.setPrice(7);
       }
-      slots[i].setItem(newItem);
-      slots[i].setSoldOut(false);
+      itemShelf[i].setItem(newItem);
+      itemShelf[i].setSoldOut(false);
     }
   }
 
   private static void displayInventory(VendingMachine vendingMachine) {
 
-    ItemShelf[] slots = vendingMachine.getInventory().getInventory();
-    for (int i = 0; i < slots.length; i++) {
+    ItemShelf[] itemShelf = vendingMachine.getInventory().getItemShelf();
+    for (int i = 0; i < itemShelf.length; i++) {
 
-      System.out.println("CodeNumber: " + slots[i].getCode() +
-          " Item: " + slots[i].getItem().getItemType().name() +
-          " Price: " + slots[i].getItem().getPrice() +
-          " isAvailable: " + !slots[i].isSoldOut());
+      System.out.println("CodeNumber: " + itemShelf[i].getCode() +
+          " Item: " + itemShelf[i].getItem().getItemType().name() +
+          " Price: " + itemShelf[i].getItem().getPrice() +
+          " isAvailable: " + !itemShelf[i].isSoldOut());
     }
   }
 }
