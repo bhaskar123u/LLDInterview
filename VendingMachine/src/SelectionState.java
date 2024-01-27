@@ -62,7 +62,7 @@ public class SelectionState implements VendingMachineState {
   @Override
   public List<Coin> refundFullMoney(VendingMachine machine) throws Exception {
     System.out.println("Returned the full amount back in the Coin Dispense Tray");
-    machine.setVendingMachineState(new IdleState(machine));
+    machine.setVendingMachineState(new VendingMachineIdleState(machine));
     return machine.getCoinList();
   }
 

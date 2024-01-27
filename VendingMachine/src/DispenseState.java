@@ -47,7 +47,7 @@ public class DispenseState implements VendingMachineState {
     System.out.println("Product has been dispensed");
     Item item = vendingMachine.getInventory().getItem(codeNumber);
     vendingMachine.getInventory().updateSoldOutItem(codeNumber);
-    vendingMachine.setVendingMachineState(new IdleState(vendingMachine));
+    vendingMachine.setVendingMachineState(new VendingMachineIdleState(vendingMachine));
     return item;
   }
 

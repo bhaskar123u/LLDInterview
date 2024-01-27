@@ -8,7 +8,7 @@ public class VendingMachine {
     private List<Coin> coinList;
 
     public VendingMachine() {
-        vendingMachineState = new IdleState();
+        vendingMachineState = new VendingMachineIdleState();
         inventory = new Inventory(10);
         coinList = new ArrayList<>();
     }
