@@ -4,12 +4,12 @@ public class Card {
   private int cvv;
   private int expiryDate;
   private int holderName;
-  static int PIN_NUMBER = 112211;
+  private int pin = 1234;
   private UserBankAccount bankAccount;
 
   public boolean isCorrectPINEntered(int pin) {
 
-    if (pin == PIN_NUMBER) {
+    if (this.pin == pin) {
       return true;
     }
     return false;
@@ -25,5 +25,10 @@ public class Card {
 
   public void setBankAccount(UserBankAccount bankAccount) {
     this.bankAccount = bankAccount;
+  }
+
+  public String setPin(int pin) {
+    this.pin = pin;
+    return "Pin changed successfully";
   }
 }

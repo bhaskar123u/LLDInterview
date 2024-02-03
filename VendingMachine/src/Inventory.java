@@ -11,7 +11,7 @@ public class Inventory {
     return itemShelf;
   }
 
-  public void setItemShelf(ItemShelf[] inventory) {
+  public void setItemShelf(ItemShelf[] itemShelf) {
     this.itemShelf = itemShelf;
   }
 

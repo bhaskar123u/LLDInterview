@@ -16,5 +16,7 @@ public class OnlineAuction {
         CricketTeam team3 = new CricketTeam("SRH", iplAuctionMediator);
 
         team1.placeBid(1000);
+        team2.placeBid(1100);
+        team3.placeBid(1200);
     }
 }
