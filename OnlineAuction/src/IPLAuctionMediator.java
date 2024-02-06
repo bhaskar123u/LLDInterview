@@ -3,8 +3,14 @@ import java.util.List;
 
 public class IPLAuctionMediator implements AuctionMediator {
   
-  List<Team> teamList = new ArrayList<>();
+  List<Team> teamList;
 
+  IPLAuctionMediator() {
+    System.out.println("IPL Auction has started");
+    System.out.println();
+    teamList = new ArrayList<>();
+  }
+  
   @Override
   public void addBidder(Team iplTeam) {
     teamList.add(iplTeam);

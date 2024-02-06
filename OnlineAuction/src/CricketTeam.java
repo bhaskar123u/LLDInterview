@@ -16,7 +16,7 @@ public class CricketTeam implements Team {
 
   @Override
   public void receiveBidNotification(int bidAmount, String bidderName) {
-    System.out.println("Notification received["+ name +"] :: Bidder " + bidderName + " has placed a bid of INR " + bidAmount);
+    System.out.println("Notification received by team ["+ name +"] :: Bidder " + bidderName + " has placed a bid of INR " + bidAmount);
   }
 
   @Override
