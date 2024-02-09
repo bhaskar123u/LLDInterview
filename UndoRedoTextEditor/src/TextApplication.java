@@ -12,5 +12,7 @@ public class TextApplication {
 
         textEditor.insertText("India", 3);
         textEditor.undo();
+        textEditor.undo();
+        textEditor.undo();
     }
 }

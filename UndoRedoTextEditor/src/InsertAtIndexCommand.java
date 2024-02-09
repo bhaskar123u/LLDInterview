@@ -17,6 +17,6 @@ public class InsertAtIndexCommand implements TextEditorCommand {
 
   public void undo() {
     text.deleteTextBetweenIndex(position, position+newString.length());
-    System.out.println("String after insertUndo : " + text.getString());
+    System.out.println("String after Undo : " + text.getString());
   }
 }

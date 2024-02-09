@@ -19,6 +19,6 @@ public class DeleteSubstringCommand implements TextEditorCommand {
 
   public void undo() {
     text.insertTextAtIndex(startPosition, deletedString.toString());
-    System.out.println("String after deleteUndo : " + text.getString());
+    System.out.println("String after Undo : " + text.getString());
   }
 }
